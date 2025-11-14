@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kids Stationery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <div class="left-section">
+        <a href="home.html" class="home-link">🏠</a>
+        <div class="logo-ls">
+            <img src="./assets/logo1.png">
+        </div>
+    </div>
+
+    <ul>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="products.html">Product Portfolio</a></li>
+        <li><a href="service.html">Service Portfolio</a></li>
+        <li><a href="why_choose_us.html">Why Choose Us</a></li>
+        <li><a href="contact_us.html">Contact Us</a></li>
+    </ul>
+</header>
+
+
+<section class="category-container">
+    <h1>Kids Stationery</h1>
+
+    <div class="item-grid">
+
+        <div class="item-card">
+            <img src="./assets/stationery_pencils.png" alt="">
+            <h3>Pencils & Erasers</h3>
+            <p class="price">₹40</p>
+            <button class="add-btn">Add to Cart</button>
+        </div>
+
+        <div class="item-card">
+            <img src="./assets/stationery_colors.png" alt="">
+            <h3>Color Sets</h3>
+            <p class="price">₹120</p>
+            <button class="add-btn">Add to Cart</button>
+        </div>
+
+        <div class="item-card">
+            <img src="./assets/stationery_notebooks.png" alt="">
+            <h3>Notebooks</h3>
+            <p class="price">₹55</p>
+            <button class="add-btn">Add to Cart</button>
+        </div>
+
+        <div class="item-card">
+            <img src="./assets/stationery_crafts.png" alt="">
+            <h3>Craft Materials</h3>
+            <p class="price">₹85</p>
+            <button class="add-btn">Add to Cart</button>
+        </div>
+
+        <div class="item-card">
+            <img src="./assets/stationery_schoolbag.png" alt="">
+            <h3>School Bags</h3>
+            <p class="price">₹350</p>
+            <button class="add-btn">Add to Cart</button>
+        </div>
+
+        <div class="item-card">
+            <img src="./assets/stationery_toys.png" alt="">
+            <h3>Learning Toys</h3>
+            <p class="price">₹199</p>
+            <button class="add-btn">Add to Cart</button>
+        </div>
+
+    </div>
+
+    <div class="cart-icon">
+        🛒 <span id="cart-count">0</span>
+    </div>
+
+</section>
+
+
+<footer class="footer-style3">
+    <div class="footer-top">
+        <img src="./assets/logo1.png" class="footer-logo3">
+
+        <p class="footer-desc3">
+            Committed to delivering quality products, trusted services, and 
+            sustainable business solutions worldwide.
+        </p>
+
+        <div class="footer-links3">
+            <a href="about.html">About</a>
+            <a href="products.html">Products</a>
+            <a href="service.html">Services</a>
+            <a href="why_choose_us.html">Why Us</a>
+            <a href="contact_us.html">Contact</a>
+        </div>
+    </div>
+
+    <div class="footer-divider3"></div>
+
+    <p class="footer-bottom3">© 2025 JIB Company. All Rights Reserved.</p>
+</footer>
+
+
+<script>
+// Run only after the page is completely loaded
+document.addEventListener("DOMContentLoaded", () => {
+
+    // Reset the cart count every time the page loads
+    localStorage.setItem("cartCount", 0);
+
+    let cartCount = 0;
+
+    const cartCountElement = document.getElementById("cart-count");
+
+    // Set the cart icon number to 0
+    if (cartCountElement) {
+        cartCountElement.textContent = cartCount;
+    }
+
+    // Add event listener to all Add-to-Cart buttons
+    document.querySelectorAll(".add-btn").forEach(btn => {
+        btn.addEventListener("click", () => {
+
+            cartCount++;  // increase count
+            localStorage.setItem("cartCount", cartCount);
+
+            if (cartCountElement) {
+                cartCountElement.textContent = cartCount;
+            }
+
+            alert("Item added to cart!");
+        });
+    });
+
+});
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agriculture Machinery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <div class="left-section">
+        <a href="home.html" class="home-link">🏠</a>
+
+        <div class="logo-ls">
+            <img src="./assets/logo1.png" alt="Logo">
+        </div>
+    </div>
+
+    <ul>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="products.html">Product Portfolio</a></li>
+        <li><a href="service.html">Service Portfolio</a></li>
+        <li><a href="why_choose_us.html">Why Choose Us</a></li>
+        <li><a href="contact_us.html">Contact Us</a></li>
+    </ul>
+</header>
+
+
+<section class="category-container">
+    <h1>Agriculture Machinery</h1>
+
+    <div class="item-grid">
+
+        <div class="item-card">
+            <img src="./assets/Tractors.png" alt="">
+            <h3>Tractors</h3>
+            <p class="price">₹5,50,000</p>
+            <button class="add-btn">Add to Cart</button>
+        </div>
+
+        <div class="item-card">
+            <img src="./assets/Harvesters.png" alt="">
+            <h3>Harvesters</h3>
+            <p class="price">₹8,75,000</p>
+            <button class="add-btn">Add to Cart</button>
+        </div>
+
+        <div class="item-card">
+            <img src="./assets/Irrigation.png" alt="">
+            <h3>Irrigation Systems</h3>
+            <p class="price">₹45,000</p>
+            <button class="add-btn">Add to Cart</button>
+        </div>
+
+        <div class="item-card">
+            <img src="./assets/sprayer.png" alt="">
+            <h3>Crop Sprayers</h3>
+            <p class="price">₹12,500</p>
+            <button class="add-btn">Add to Cart</button>
+        </div>
+
+        <div class="item-card">
+            <img src="./assets/tools.png" alt="">
+            <h3>Hand Tools</h3>
+            <p class="price">₹850</p>
+            <button class="add-btn">Add to Cart</button>
+        </div>
+
+        <div class="item-card">
+            <img src="./assets/fertilizer.png" alt="">
+            <h3>Fertilizer Spreaders</h3>
+            <p class="price">₹6,200</p>
+            <button class="add-btn">Add to Cart</button>
+        </div>
+
+    </div>
+
+    <div class="cart-icon">
+        🛒 <span id="cart-count">0</span>
+    </div>
+</section>
+
+
+<footer class="footer-style3">
+    <div class="footer-top">
+        <img src="./assets/logo1.png" class="footer-logo3">
+
+        <p class="footer-desc3">
+            Committed to delivering quality products, trusted services, and
+            sustainable business solutions worldwide.
+        </p>
+
+        <div class="footer-links3">
+            <a href="about.html">About</a>
+            <a href="products.html">Products</a>
+            <a href="service.html">Services</a>
+            <a href="why_choose_us.html">Why Us</a>
+            <a href="contact_us.html">Contact</a>
+        </div>
+    </div>
+
+    <div class="footer-divider3"></div>
+
+    <p class="footer-bottom3">© 2025 JIB Company. All Rights Reserved.</p>
+</footer>
+
+
+<script>
+// Run only after the page is completely loaded
+document.addEventListener("DOMContentLoaded", () => {
+
+    // Reset the cart count every time the page loads
+    localStorage.setItem("cartCount", 0);
+
+    let cartCount = 0;
+
+    const cartCountElement = document.getElementById("cart-count");
+
+    // Set the cart icon number to 0
+    if (cartCountElement) {
+        cartCountElement.textContent = cartCount;
+    }
+
+    // Add event listener to all Add-to-Cart buttons
+    document.querySelectorAll(".add-btn").forEach(btn => {
+        btn.addEventListener("click", () => {
+
+            cartCount++;  // increase count
+            localStorage.setItem("cartCount", cartCount);
+
+            if (cartCountElement) {
+                cartCountElement.textContent = cartCount;
+            }
+
+            alert("Item added to cart!");
+        });
+    });
+
+});
+</script>
+
+
+</body>
+</html>
